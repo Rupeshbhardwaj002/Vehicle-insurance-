@@ -1,99 +1,86 @@
-🚗 Vehicle Insurance Prediction – End-to-End MLOps Pipeline
+# 🚗 Vehicle Insurance Prediction – End-to-End MLOps Pipeline
 
-An industry-grade Machine Learning project implementing a complete MLOps pipeline for predicting whether a customer will purchase vehicle insurance.
+An **industry-grade Machine Learning project** implementing a **complete MLOps pipeline** for predicting whether a customer will purchase vehicle insurance.
 
-This project demonstrates production-ready ML engineering practices, including:
+This project demonstrates **production-ready ML engineering practices** such as:
 
-End-to-End ML pipeline
+- End-to-End ML pipeline
+- CI/CD automation
+- Docker containerization
+- AWS cloud integration
+- Modular project architecture
+- Logging & exception handling
+- Artifact versioning and model storage
 
-CI/CD automation
+The goal is to simulate how **real-world ML systems are built, deployed, and maintained in production environments.**
 
-Docker containerization
+---
 
-AWS cloud integration
+# 📌 Problem Statement
 
-Modular and scalable architecture
+Insurance companies often struggle to identify **which customers are likely to purchase vehicle insurance**.
 
-Logging and exception handling
+Using machine learning, this system predicts **customer purchase intent**, enabling companies to:
 
-Artifact management
+- Target high-probability customers
+- Optimize marketing campaigns
+- Increase insurance conversion rates
 
-The goal is to simulate how real-world ML systems are built and deployed in production environments.
+---
 
-📌 Problem Statement
+# ⭐ Project Highlights
 
-Insurance companies often struggle to identify which customers are likely to purchase vehicle insurance.
+- ✔ End-to-End Machine Learning Pipeline  
+- ✔ CI/CD Automation with **GitHub Actions**  
+- ✔ Dockerized ML Application  
+- ✔ **AWS S3** for model artifact storage  
+- ✔ **AWS IAM** for secure authentication  
+- ✔ **AWS ECR** for container registry  
+- ✔ Modular and scalable architecture  
+- ✔ Config-driven pipeline  
 
-Using machine learning, this system predicts customer purchase intent, allowing companies to:
+---
 
-Optimize marketing campaigns
+# 🏗 System Architecture
 
-Target potential customers
 
-Increase insurance conversion rates
+Data Source
+│
+▼
+Data Ingestion
+│
+▼
+Data Validation
+│
+▼
+Data Transformation
+│
+▼
+Model Training
+│
+▼
+Model Evaluation
+│
+▼
+Model Pusher
+│
+▼
+AWS S3 Bucket
+│
+▼
+Prediction Pipeline (Flask Web App)
 
-🧠 Key Features
 
-✔ End-to-End ML Pipeline
-✔ Modular Project Architecture
-✔ CI/CD using GitHub Actions
-✔ AWS S3 for artifact storage
-✔ AWS IAM for secure cloud access
-✔ AWS ECR for Docker image registry
-✔ Dockerized ML service
-✔ Config-driven pipeline
-✔ Logging and exception handling
+---
 
-🏗 System Architecture
-                ┌───────────────────────┐
-                │      Data Source      │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │    Data Ingestion     │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │    Data Validation    │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │ Data Transformation   │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │    Model Training     │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │   Model Evaluation    │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │     Model Pusher      │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │      AWS S3 Bucket    │
-                └──────────┬────────────┘
-                           │
-                           ▼
-                ┌───────────────────────┐
-                │  Prediction Pipeline  │
-                │      (Flask App)      │
-                └───────────────────────┘
-📂 Project Structure
+# 📂 Project Structure
+
+```bash
 Vehicle-Insurance-Pipeline
 │
-├── .github/workflows/
-│   └── aws.yaml                # CI/CD pipeline
+├── .github/
+│   └── workflows/
+│       └── aws.yaml                # CI/CD workflow
 │
 ├── src/
 │   ├── components/
@@ -126,32 +113,32 @@ Vehicle-Insurance-Pipeline
 │   ├── model.yaml
 │   └── schema.yaml
 │
-├── artifact/                   # training artifacts
-├── logs/                       # pipeline logs
-├── notebook/                   # experimentation notebooks
-├── templates/                  # html templates
-├── static/                     # css files
+├── artifact/                      # training artifacts
+├── logs/                          # pipeline logs
+├── notebook/                      # experimentation notebooks
+├── templates/                     # HTML templates
+├── static/                        # CSS files
 │
-├── app.py
 ├── Dockerfile
+├── app.py
 ├── pyproject.toml
 └── README.md
 ⚙️ ML Pipeline Stages
 1️⃣ Data Ingestion
 
-Fetch dataset
+Fetch raw dataset
 
-Store raw data
+Store data in feature store
 
-Split data into train/test sets
+Split dataset into train and test sets
 
 2️⃣ Data Validation
 
-Validate schema
+Schema validation
 
-Check missing values
+Missing value checks
 
-Data consistency checks
+Data consistency verification
 
 3️⃣ Data Transformation
 
@@ -165,30 +152,30 @@ Save preprocessing pipeline
 
 4️⃣ Model Training
 
-Train ML model
+Train machine learning model
 
 Configure hyperparameters
 
-Save trained model
+Save trained model artifact
 
 5️⃣ Model Evaluation
 
-Compare model performance
+Evaluate model performance
 
-Ensure quality threshold before deployment
+Prevent poor models from deployment
 
 6️⃣ Model Pusher
 
-Upload model artifacts to AWS S3
+Push trained model artifacts to AWS S3
 
 ☁️ AWS Cloud Integration
 
-The project integrates with AWS services to support production deployment.
+This project integrates with AWS services to support production ML deployment.
 
-Service	Purpose
+AWS Service	Purpose
 AWS S3	Model artifact storage
-AWS IAM	Secure authentication
-AWS ECR	Docker image registry
+AWS IAM	Secure access control
+AWS ECR	Docker container registry
 GitHub Actions	CI/CD automation
 🔁 CI/CD Pipeline
 
@@ -196,48 +183,44 @@ The CI/CD workflow automatically:
 
 Builds Docker image
 
-Pushes image to AWS ECR
+Pushes Docker image to AWS ECR
 
 Deploys updated pipeline
 
-Stores artifacts in AWS S3
+Stores model artifacts in AWS S3
 
-Workflow file location:
+Workflow configuration:
 
 .github/workflows/aws.yaml
 🐳 Docker Containerization
-
 Build Docker Image
-
 docker build -t vehicle-insurance .
-
-Run Container
-
+Run Docker Container
 docker run -p 5000:5000 vehicle-insurance
 🌐 Web Application
 
-A Flask-based web interface is used for real-time predictions.
+A Flask-based web application provides a simple interface for predictions.
 
 Run locally:
 
 python app.py
 
-Access in browser:
+Open in browser:
 
 http://localhost:5000
 📊 Logging System
 
-Pipeline logs are stored in:
+All pipeline logs are stored inside the logs directory.
 
 logs/
 
-This helps monitor:
+Logs help monitor:
 
-pipeline execution
+Pipeline execution
 
-errors
+System errors
 
-debugging
+Debugging information
 
 🛠 Tech Stack
 Programming
@@ -252,7 +235,7 @@ Pandas
 
 NumPy
 
-MLOps
+MLOps Tools
 
 Docker
 
@@ -268,25 +251,23 @@ Backend
 
 Flask
 
-🚀 Learning Outcomes
+🚀 Key Learning Outcomes
 
 This project demonstrates practical knowledge of:
 
-Production Machine Learning systems
+End-to-End Machine Learning Systems
 
-End-to-End ML pipelines
+MLOps engineering practices
 
-MLOps engineering
+CI/CD for ML pipelines
 
-Cloud integration
+Cloud-based model deployment
 
-CI/CD automation
-
-Containerized ML deployment
+Containerized ML applications
 
 👨‍💻 Author
 
 Rupesh Bhardwaj
 
 AI / Machine Learning Engineer
-Interested in Deep Learning, MLOps, and Scalable AI Systems
+Focused on Machine Learning, Deep Learning, and MLOps Systems
